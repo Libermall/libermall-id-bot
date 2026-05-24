@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  bot:
+    build: .
+    container_name: libermall-id-bot
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "127.0.0.1:3010:3000"
+    networks:
+      - libermall-id
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+networks:
+  libermall-id:
+    external: true
+    name: libermall-id_libermall-id
