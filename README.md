@@ -19,7 +19,7 @@
 
 ## What is this?
 
-`@LibermallIDbot` is the Telegram surface of [Libermall ID](https://id.libermall.com) — the open identity layer that powers every product in the Libermall ecosystem. Users open the bot, tap one button, and they're signed in across [Libermall DEX](https://dex.libermall.com), [PayLibermall](https://pay.libermall.com), [Libermall Card](https://card.libermall.com), [Sites.Reviews](https://sites.reviews), [TonChat AI](https://tonchat.ai), [TON.CEO](https://ton.ceo), and the [Libermall marketplace](https://libermall.com).
+`@LibermallIDbot` is the Telegram surface of [Libermall ID](https://id.libermall.com) — the open identity layer that powers every product in the Libermall ecosystem. Users open the bot, tap one button, and they're signed in across [Libermall DEX](https://dex.libermall.com), [PayLibermall](https://pay.libermall.com), [Libermall Card](https://card.libermall.com) and the [Libermall marketplace](https://libermall.com).
 
 The bot is bilingual (RU / EN), auto-detected from `language_code`, and keeps Casdoor's user properties in sync with their current Telegram state.
 
@@ -212,6 +212,6 @@ The `Libermall` wordmark and the M-shield logo are trademarks of Libermall and a
 
 **Part of the [Libermall ecosystem](https://libermall.com).**
 
-[Identity](https://id.libermall.com) · [DEX](https://dex.libermall.com) · [Pay](https://pay.libermall.com) · [Card](https://card.libermall.com) · [Reviews](https://sites.reviews) · [TonChat AI](https://tonchat.ai) · [TON.CEO](https://ton.ceo)
+[Identity](https://id.libermall.com) · [DEX](https://dex.libermall.com) · [Pay](https://pay.libermall.com) · [Card](https://card.libermall.com)
 
 </div>
