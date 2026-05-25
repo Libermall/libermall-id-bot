@@ -1,13 +1,36 @@
 {
-  "name": "libermall-id-bot",
-  "version": "0.1.0",
-  "description": "Telegram-бот @LibermallIDbot для Single Sign-On экосистемы Libermall",
+  "name": "@libermall/id-bot",
+  "version": "1.0.0",
+  "description": "Official Telegram bot @LibermallIDbot for Libermall ID — single sign-on across the Libermall ecosystem (DEX, PayLibermall, Card, Sites.Reviews, TonChat AI, TON.CEO).",
+  "keywords": [
+    "telegram-bot",
+    "telegraf",
+    "libermall",
+    "libermall-id",
+    "sso",
+    "oauth",
+    "oidc",
+    "casdoor",
+    "ton",
+    "ton-connect",
+    "web3"
+  ],
   "main": "src/index.js",
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiberMall/libermall-id-bot.git"
+  },
+  "homepage": "https://id.libermall.com",
+  "bugs": {
+    "url": "https://github.com/LiberMall/libermall-id-bot/issues"
+  },
+  "author": "Libermall <hello@libermall.com> (https://libermall.com)",
+  "license": "MIT",
   "dependencies": {
     "telegraf": "^4.16.3",
     "dotenv": "^16.4.5"
