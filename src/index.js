@@ -10,7 +10,7 @@ const LOGIN_URL = process.env.LOGIN_URL || 'https://id.libermall.com/';
 
 bot.use(async (ctx, next) => {
   if (ctx.from) {
-    // Не блокируем обработку, sync в фоне
+    // Non-blocking — sync runs in the background.
     syncUserToCasdoor(ctx.from).catch(err => console.warn('casdoor sync failed', err?.message));
   }
   return next();

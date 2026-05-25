@@ -1,5 +1,6 @@
-// Sync TG-юзера с Casdoor через admin API.
-// Сохраняем chat_id, language_code, premium status в properties юзера если он есть в Casdoor.
+// Sync a Telegram user with Casdoor via the admin API.
+// Updates chat_id, language_code, premium status and last_seen in the user's
+// `properties` map — but only if the user already exists in Casdoor.
 
 const BASE = process.env.CASDOOR_URL || 'https://id.libermall.com';
 const ADMIN_USER = process.env.CASDOOR_ADMIN_USER || 'admin';
@@ -34,13 +35,12 @@ async function getAdminCookie() {
 export async function syncUserToCasdoor(tgUser) {
   if (!ADMIN_PASS || !tgUser?.id) return;
 
-  // Ищем юзера по tg_id (можно по username/external_id/properties)
-  // Casdoor user identified by tg_username = "tg_<id>" в нашей конвенции.
-  // Если найден — обновляем properties с chat_id + language_code.
+  // Look up the user by tg id, falling back to username.
+  // Convention: Casdoor user `name` is `tg_<id>` for Telegram-linked accounts.
+  // If found, patch their properties with chat_id + language_code.
 
   try {
     const cookie = await getAdminCookie();
-    // Простой sync: апдейт properties юзера identified by id в любом app
     const tgId = String(tgUser.id);
 
     // get-user by tg id (try by name field 'tg_<id>' in organization libermall)
@@ -55,7 +55,7 @@ export async function syncUserToCasdoor(tgUser) {
       const j = await r.json();
       if (j?.data) { user = j.data; break; }
     }
-    if (!user) return; // юзер ещё не создан — нечего sync
+    if (!user) return; // user has not signed in via Libermall ID yet — nothing to sync
 
     user.properties = user.properties || {};
     user.properties.tg_chat_id = tgId;
