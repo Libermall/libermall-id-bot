@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/LiberMall/libermall-id-bot/issues"
   },
-  "author": "Libermall <hello@libermall.com> (https://libermall.com)",
+  "author": "Libermall (https://libermall.com)",
   "license": "MIT",
   "dependencies": {
     "telegraf": "^4.16.3",
